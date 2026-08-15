@@ -63,7 +63,7 @@ export default function Home() {
             <p className="eyebrow badge"><span /> Self-guided audio walks</p>
             <h1>Wander quietly.<br /><em>Listen closely.</em></h1>
             <p className="heroCopy">Built for solo wanderers. No groups. No rush. Just you and the city.</p>
-            <div className="heroActions"><a className="button" href="#download">Start listening <span>→</span></a><a className="textLink" href="#how"><b>▶</b> See how it works</a></div>
+            <div className="heroActions"><a className="button" href="#download">Start listening <span>→</span></a><Link className="textLink" href="/how-it-works"><b>▶</b> See how it works</Link></div>
           </div>
           <dl className="heroStats"><div><dt>3,669</dt><dd>walking tours</dd></div><div><dt>4.7 <i>★</i></dt><dd>average rating</dd></div><div><dt>73k+</dt><dd>happy ratings</dd></div></dl>
         </section>
