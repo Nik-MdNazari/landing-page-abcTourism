@@ -728,10 +728,10 @@ export default function AdminPage() {
         </section>
 
         <nav className={styles.tabs} aria-label="Admin sections">
+          <button className={`${styles.tab} ${tab === "monitoring" ? styles.tabActive : ""}`} onClick={() => setTab("monitoring")}>Monitoring</button>
           <button className={`${styles.tab} ${tab === "clients" ? styles.tabActive : ""}`} onClick={() => setTab("clients")}>Clients</button>
           <button className={`${styles.tab} ${tab === "guides" ? styles.tabActive : ""}`} onClick={() => setTab("guides")}>Tour Guides</button>
           <button className={`${styles.tab} ${tab === "packages" ? styles.tabActive : ""}`} onClick={() => setTab("packages")}>Packages</button>
-          <button className={`${styles.tab} ${tab === "monitoring" ? styles.tabActive : ""}`} onClick={() => setTab("monitoring")}>Monitoring</button>
         </nav>
 
         {tab === "clients" && <ClientsSection notify={notify} />}
