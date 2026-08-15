@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import IntroOverlay from "./IntroOverlay";
 import ScrollReveal from "./ScrollReveal";
 
@@ -62,7 +63,7 @@ export default function Home() {
             <p className="eyebrow badge"><span /> Self-guided audio walks</p>
             <h1>Wander quietly.<br /><em>Listen closely.</em></h1>
             <p className="heroCopy">No group to keep up with, no guide to make small talk with. Just a pair of earbuds, a quiet route through Ipoh, and an AI companion that answers only when you ask.</p>
-            <div className="heroActions"><a className="button" href="#download">Start listening <span>→</span></a><a className="textLink" href="#how"><b>▶</b> See how it works</a></div>
+            <div className="heroActions"><Link className="button" href="/plan/start">Start your planning… <span>→</span></Link><a className="textLink" href="#how"><b>▶</b> See how it works</a></div>
           </div>
           <dl className="heroStats"><div><dt>3,669</dt><dd>walking tours</dd></div><div><dt>4.7 <i>★</i></dt><dd>average rating</dd></div><div><dt>73k+</dt><dd>happy ratings</dd></div></dl>
           <div className="heroNote"><span>🎧</span><p><b>Built for solo wanderers.</b><br />No groups. No rush. Just you and the city.</p></div>
