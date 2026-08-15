@@ -1,0 +1,30 @@
+.main{max-width:720px;margin:0 auto;padding:64px max(4vw,24px) 120px;min-height:calc(100vh - 84px);display:flex;align-items:center}
+.wrap{width:100%}
+
+.step{font-family:var(--font-mono-stack);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-bottom:14px}
+.progressTrack{width:100%;height:3px;border-radius:9999px;background:var(--charcoal);overflow:hidden;margin-bottom:40px}
+.progressFill{height:100%;background:var(--ember);border-radius:9999px;transition:width .3s ease}
+
+.wrap h1{font-size:clamp(28px,3.6vw,42px);margin-bottom:10px;max-width:600px}
+.subtitle{font-size:14px;color:var(--ash);margin-bottom:32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.subtitle span{font-family:var(--font-mono-stack);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--smoke)}
+
+.options{display:flex;flex-wrap:wrap;gap:10px}
+.option{padding:14px 22px;border-radius:9999px;background:var(--charcoal);border:1px solid var(--line);color:var(--paper);font-size:14px;font-weight:500;font-family:var(--font-sans-stack);cursor:pointer;transition:.15s}
+.option:hover{background:#201e1d}
+.option.selected{background:var(--ember);border-color:var(--ember);color:var(--paper)}
+.wrap > .options{margin-bottom:48px}
+
+.groups{display:flex;flex-direction:column;gap:26px;margin-bottom:48px}
+.groupName{font-family:var(--font-mono-stack);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--smoke);margin-bottom:12px}
+
+.contactFields{display:flex;flex-direction:column;gap:18px;max-width:360px;margin-bottom:48px}
+.field{display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--ash)}
+.field input{background:var(--charcoal);border:1px solid var(--line);border-radius:6px;padding:13px 16px;color:var(--paper);font-size:15px;font-family:var(--font-sans-stack)}
+.field input::placeholder{color:var(--smoke)}
+.field input:focus{outline:none;border-color:var(--ember)}
+
+.nav{display:flex;justify-content:space-between;align-items:center}
+.nav button[disabled]{opacity:.35;cursor:not-allowed}
+
+@media(max-width:600px){.main{padding:48px 20px 90px}}

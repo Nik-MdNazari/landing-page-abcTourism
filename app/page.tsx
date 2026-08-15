@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import IntroOverlay from "./IntroOverlay";
 import ScrollReveal from "./ScrollReveal";
 
@@ -61,11 +62,10 @@ export default function Home() {
             <p className="heroBrand">Dengarlah</p>
             <p className="eyebrow badge"><span /> Self-guided audio walks</p>
             <h1>Wander quietly.<br /><em>Listen closely.</em></h1>
-            <p className="heroCopy">No group to keep up with, no guide to make small talk with. Just a pair of earbuds, a quiet route through Ipoh, and an AI companion that answers only when you ask.</p>
+            <p className="heroCopy">Built for solo wanderers. No groups. No rush. Just you and the city.</p>
             <div className="heroActions"><a className="button" href="#download">Start listening <span>→</span></a><a className="textLink" href="#how"><b>▶</b> See how it works</a></div>
           </div>
           <dl className="heroStats"><div><dt>3,669</dt><dd>walking tours</dd></div><div><dt>4.7 <i>★</i></dt><dd>average rating</dd></div><div><dt>73k+</dt><dd>happy ratings</dd></div></dl>
-          <div className="heroNote"><span>🎧</span><p><b>Built for solo wanderers.</b><br />No groups. No rush. Just you and the city.</p></div>
         </section>
 
         <section className="intro section" id="locals">
@@ -82,7 +82,7 @@ export default function Home() {
         </section>
 
         <section className="features section" id="how">
-          <div className="sectionHead" data-reveal><div><p className="eyebrow"><span /> Explore without the timetable</p><h2>The city moves<br /><em>at your speed.</em></h2></div><a className="button" href="#download">Try it out <span>→</span></a></div>
+          <div className="sectionHead" data-reveal><div><p className="eyebrow"><span /> Explore without the timetable</p><h2>The city moves<br /><em>at your speed.</em></h2></div><Link className="button" href="/plan/start">Try it out <span>→</span></Link></div>
           <div className="featureGrid">{features.map((f, i) => <article key={f.title} data-reveal style={{ transitionDelay: `${i * 70}ms` }}><div className="featureGraphic"><Image src={f.image} alt="" fill sizes="(max-width: 900px) 50vw, 25vw" style={f.imagePosition ? { objectPosition: f.imagePosition } : undefined} /></div><div className="featureBody"><span className="featureIcon">{f.icon}</span><h3>{f.title}</h3><div className="rule"/><p>{f.text}</p>{f.demoHref ? <a className="textLink cardLink" href={f.demoHref}><b>▶</b> Play demo</a> : <a className="cardLink" href={f.href}>Learn more <span>→</span></a>}</div></article>)}</div>
           <div className="walkFeature" data-reveal><div className="walkPhoto"><Image src="/images/tour-2.jpg" alt="Looking up at the colonial clock tower of Dewan Bandaran Ipoh" fill sizes="50vw" /></div><div className="walkCopy"><p className="eyebrow light"><span /> Freedom looks good on you</p><h2>Pause for lunch.<br />Take the wrong turn.<br /><em>Keep the story.</em></h2><p>Start whenever you want, alone or with the one person who also hates group tours. Pause, skip a stop, or just sit somewhere quiet—the story waits for you, not the other way around.</p><a className="button cream" href="#download">Start exploring <span>→</span></a></div></div>
         </section>
