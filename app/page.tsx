@@ -12,10 +12,10 @@ const activities = [
 ];
 
 const features = [
-  ["↗", "Your pace, your plan", "Start, pause or vanish down a side street—resume the story whenever you're ready."],
-  ["◎", "GPS-guided stories", "Narration begins on its own the moment you reach each stop. No tapping, no waiting."],
-  ["✦", "Ask Dengarlah anything", "Curious about that mural, or what's cooking behind that stall? Ask out loud—our AI guide answers in real time, no script required."],
-  ["↓", "Offline & multilingual", "Download once and explore in your language, signal-free, for as long as you like."],
+  { icon: "↗", image: "/images/tour-1.jpg", title: "Your pace, your plan", text: "Start, pause or vanish down a side street—resume the story whenever you're ready.", href: "#" },
+  { icon: "◎", image: "/images/tour-3.jpg", title: "GPS-guided stories", text: "Narration begins on its own the moment you reach each stop. No tapping, no waiting.", href: "#" },
+  { icon: "✦", image: "/images/earbuds-demo.jpg", imagePosition: "50% 78%", title: "Ask Dengarlah anything", text: "Curious about that mural, or what's cooking behind that stall? Ask out loud—our AI guide answers in real time, no script required.", href: "#", demoHref: "#" },
+  { icon: "↓", image: "/images/gallery-1.jpg", title: "Offline & multilingual", text: "Download once and explore in your language, signal-free, for as long as you like.", href: "#" },
 ];
 
 const steps = [
@@ -46,7 +46,6 @@ export default function Home() {
       <ScrollReveal />
       <a className="skip" href="#main">Skip to content</a>
       <header className="header">
-        <a className="logo" href="#top" aria-label="Dengarlah home">Dengarlah</a>
         <nav aria-label="Primary navigation">
           <a href="#discover">Discover Ipoh</a><a href="#how">How it works</a><a href="#locals">Local voices</a><a href="#faq">FAQ</a>
         </nav>
@@ -59,6 +58,7 @@ export default function Home() {
             <Image src="/images/hero-banner.jpg" alt="The clock tower of Dewan Bandaran Ipoh against a clear sky" fill priority sizes="100vw" />
           </div>
           <div className="heroContent">
+            <p className="heroBrand">Dengarlah</p>
             <p className="eyebrow badge"><span /> Self-guided audio walks</p>
             <h1>Wander quietly.<br /><em>Listen closely.</em></h1>
             <p className="heroCopy">No group to keep up with, no guide to make small talk with. Just a pair of earbuds, a quiet route through Ipoh, and an AI companion that answers only when you ask.</p>
@@ -82,8 +82,8 @@ export default function Home() {
         </section>
 
         <section className="features section" id="how">
-          <div className="sectionHead" data-reveal><div><p className="eyebrow"><span /> Explore without the timetable</p><h2>The city moves<br /><em>at your speed.</em></h2></div><p>Pop in your earbuds and let GPS do the guiding. Wander at your own pace, and when curiosity strikes, just ask—Dengarlah’s AI is listening too.</p></div>
-          <div className="featureGrid">{features.map(([icon,title,text], i) => <article key={title} data-reveal style={{ transitionDelay: `${i * 70}ms` }}><span className="featureIcon">{icon}</span><h3>{title}</h3><div className="rule"/><p>{text}</p></article>)}</div>
+          <div className="sectionHead" data-reveal><div><p className="eyebrow"><span /> Explore without the timetable</p><h2>The city moves<br /><em>at your speed.</em></h2></div><a className="button" href="#download">Try it out <span>→</span></a></div>
+          <div className="featureGrid">{features.map((f, i) => <article key={f.title} data-reveal style={{ transitionDelay: `${i * 70}ms` }}><div className="featureGraphic"><Image src={f.image} alt="" fill sizes="(max-width: 900px) 50vw, 25vw" style={f.imagePosition ? { objectPosition: f.imagePosition } : undefined} /></div><div className="featureBody"><span className="featureIcon">{f.icon}</span><h3>{f.title}</h3><div className="rule"/><p>{f.text}</p>{f.demoHref ? <a className="textLink cardLink" href={f.demoHref}><b>▶</b> Play demo</a> : <a className="cardLink" href={f.href}>Learn more <span>→</span></a>}</div></article>)}</div>
           <div className="walkFeature" data-reveal><div className="walkPhoto"><Image src="/images/tour-2.jpg" alt="Looking up at the colonial clock tower of Dewan Bandaran Ipoh" fill sizes="50vw" /></div><div className="walkCopy"><p className="eyebrow light"><span /> Freedom looks good on you</p><h2>Pause for lunch.<br />Take the wrong turn.<br /><em>Keep the story.</em></h2><p>Start whenever you want, alone or with the one person who also hates group tours. Pause, skip a stop, or just sit somewhere quiet—the story waits for you, not the other way around.</p><a className="button cream" href="#download">Start exploring <span>→</span></a></div></div>
         </section>
 

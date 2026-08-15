@@ -4,39 +4,53 @@ import { useEffect, useRef, useState } from "react";
 
 type Phase = "init" | "tagline" | "headline" | "exit" | "done";
 
+function revealHero() {
+  document.documentElement.classList.add("hero-in");
+}
+
 export default function IntroOverlay() {
   const [phase, setPhase] = useState<Phase>("init");
   const previousOverflow = useRef("");
   const decision = useRef<"skip" | "play" | null>(null);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     if (decision.current === null) {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const alreadySeen = sessionStorage.getItem("dengarlah-intro-seen");
       decision.current = reduceMotion || alreadySeen ? "skip" : "play";
       if (decision.current === "play") sessionStorage.setItem("dengarlah-intro-seen", "1");
     }
 
+    if (!reduceMotion) document.documentElement.classList.add("hero-anim");
+
     if (decision.current === "skip") {
-      const skipTimer = setTimeout(() => setPhase("done"), 0);
-      return () => clearTimeout(skipTimer);
+      timers.current.push(setTimeout(() => setPhase("done"), 0));
+      if (!reduceMotion) timers.current.push(setTimeout(revealHero, 150));
+      const scheduled = timers.current;
+      return () => scheduled.forEach(clearTimeout);
     }
 
     previousOverflow.current = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
 
-    const timers = [
+    timers.current.push(
       setTimeout(() => setPhase("tagline"), 50),
       setTimeout(() => setPhase("headline"), 1950),
-      setTimeout(() => setPhase("exit"), 4050),
+      setTimeout(() => {
+        setPhase("exit");
+        revealHero();
+      }, 4050),
       setTimeout(() => {
         document.documentElement.style.overflow = previousOverflow.current;
         setPhase("done");
-      }, 4950),
-    ];
+      }, 5380)
+    );
 
+    const scheduled = timers.current;
     return () => {
-      timers.forEach(clearTimeout);
+      scheduled.forEach(clearTimeout);
       document.documentElement.style.overflow = previousOverflow.current;
     };
   }, []);
@@ -44,7 +58,9 @@ export default function IntroOverlay() {
   if (phase === "done") return null;
 
   const skip = () => {
+    timers.current.forEach(clearTimeout);
     document.documentElement.style.overflow = previousOverflow.current;
+    revealHero();
     setPhase("done");
   };
 
