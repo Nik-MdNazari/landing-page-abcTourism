@@ -1,0 +1,45 @@
+/* page intro */
+.intro{padding-top:150px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.intro h1{font-size:clamp(40px,5.6vw,68px);max-width:820px;margin:0 0 20px}
+.introCopy{max-width:560px;color:var(--fog);font-size:16px;line-height:1.7}
+
+/* screen groups */
+.group{padding:64px max(4vw,24px)}
+.groupHead{max-width:640px;margin:0 auto 40px}
+.groupHead h2{margin:0 0 14px}
+.groupHead p{color:var(--ash);font-size:15px;line-height:1.7}
+
+.screenRow{display:flex;gap:36px;overflow-x:auto;padding:6px max(4vw,24px) 26px;margin:0 max(-4vw,-24px)}
+.screenItem{flex-shrink:0;display:flex;flex-direction:column;gap:16px}
+.screenLabel{display:flex;align-items:flex-start;gap:12px;max-width:289px}
+.screenNum{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--graphite);color:var(--paper);font-family:var(--font-mono-stack);font-size:11px;margin-top:2px}
+.screenLabel b{display:block;font-family:var(--font-display-stack);font-weight:500;font-size:16px;color:var(--paper)}
+.screenLabel p{font-size:12.5px;color:var(--ash);margin-top:3px;line-height:1.5}
+
+/* phone chrome */
+.viewport{width:289px;height:629px;flex-shrink:0;overflow:hidden;border-radius:35px;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08)}
+.canvas{width:402px;height:874px;transform:scale(0.7188);transform-origin:top left}
+.device{width:100%;height:100%;position:relative;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+.dynamicIsland{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:126px;height:37px;border-radius:24px;background:#000;z-index:50}
+.statusBar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:154px;padding:21px 24px 19px;box-sizing:border-box}
+.statusBar span{font-family:-apple-system,"SF Pro",system-ui;font-weight:590;font-size:17px;line-height:22px}
+.statusIcons{display:flex;align-items:center;gap:7px;padding-top:1px}
+.deviceContent{height:100%;overflow:hidden}
+.homeIndicator{position:absolute;bottom:0;left:0;right:0;z-index:60;height:34px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px;pointer-events:none}
+.homeBar{width:139px;height:5px;border-radius:100px}
+
+/* live leaflet map */
+.liveMap{width:100%;height:100%;background:#f4f1f0}
+
+/* closing cta */
+.closing{text-align:center;background:var(--charcoal);border-radius:44px 44px 0 0}
+.closing h2{margin:20px 0 16px}
+.closing p{color:var(--ash);font-size:15px;max-width:480px;margin:0 auto}
+.closingActions{display:flex;align-items:center;gap:26px;margin-top:32px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:600px){
+  .intro{padding-top:120px}
+  .group{padding:48px 0}
+  .groupHead{padding:0 20px}
+  .closing{padding:64px 20px}
+}
