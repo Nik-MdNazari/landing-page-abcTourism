@@ -156,7 +156,7 @@ export default function PlanClient() {
               </div>
               <div className={styles.headActions}>
                 {/* <a className="button" href="/purchase">Purchase tour <span>→</span></a> */}
-                <Link className={styles.editLink} href="/plan/start">Test it out →</Link>
+                <Link className={styles.editLink} href="/plan/start">Purchase plan →</Link>
               </div>
             </section>
 
