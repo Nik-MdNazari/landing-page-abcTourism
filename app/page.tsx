@@ -47,6 +47,9 @@ export default function Home() {
       <ScrollReveal />
       <a className="skip" href="#main">Skip to content</a>
       <header className="header">
+        <Link className="logo" href="/" aria-label="ABC Tourism home">
+          <Image className="logoMark" src="/images/abc-tourism-logo.png" alt="ABC Tourism" width={640} height={430} />
+        </Link>
         <nav aria-label="Primary navigation">
           <a href="#discover">Discover Ipoh</a><a href="#how">How it works</a><a href="#locals">Local voices</a><a href="#faq">FAQ</a>
         </nav>
@@ -59,7 +62,7 @@ export default function Home() {
             <Image src="/images/hero-banner.jpg" alt="The clock tower of Dewan Bandaran Ipoh against a clear sky" fill priority sizes="100vw" />
           </div>
           <div className="heroContent">
-            <p className="heroBrand">Dengarlah</p>
+            <Image className="heroBrand" src="/images/abc-tourism-logo.png" alt="ABC Tourism" width={640} height={430} />
             <p className="eyebrow badge"><span /> Self-guided audio walks</p>
             <h1>Wander quietly.<br /><em>Listen closely.</em></h1>
             <p className="heroCopy">Built for solo wanderers. No groups. No rush. Just you and the city.</p>
@@ -104,7 +107,7 @@ export default function Home() {
         <section className="download section" id="download"><div data-reveal><p className="eyebrow light"><span /> Your next walk is waiting</p><h2>Hear Ipoh<br /><em>differently.</em></h2><p>Download the app, choose a story and let the city find you instead.</p><div className="storeButtons"><a href="#"> &nbsp; App Store</a><a href="#">▶ &nbsp; Google Play</a></div></div><div className="postcard" data-reveal><Image src="/images/gallery-3.jpg" alt="Mirror Lake reflecting the forested limestone hills near Ipoh" fill sizes="360px"/><span>Jom jalan! ✦</span></div></section>
       </main>
 
-      <footer><div className="footerTop"><div><span className="logo">Dengarlah</span><p>Self-guided stories for people who’d rather listen than talk.</p></div><div><b>Explore</b><a href="#discover">Discover Ipoh</a><a href="#how">How it works</a><a href="#locals">Local voices</a></div><div><b>Say hello</b><a href="mailto:hello@dengarlah.app">Email us</a><a href="#">Instagram</a><a href="#">Facebook</a></div></div><div className="footerBottom"><span>© 2026 ABC Dengarlah</span><span>Made quietly in Ipoh, Perak</span></div></footer>
+      <footer><div className="footerTop"><div><span className="logo"><Image className="logoMark" src="/images/abc-tourism-logo.png" alt="ABC Tourism" width={640} height={430} /></span><p>Self-guided stories for people who’d rather listen than talk.</p></div><div><b>Explore</b><a href="#discover">Discover Ipoh</a><a href="#how">How it works</a><a href="#locals">Local voices</a></div><div><b>Say hello</b><a href="mailto:hello@dengarlah.app">Email us</a><a href="#">Instagram</a><a href="#">Facebook</a></div></div><div className="footerBottom"><span>© 2026 ABC Dengarlah</span><span>Made quietly in Ipoh, Perak</span></div></footer>
     </>
   );
 }
